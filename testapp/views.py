@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
-
+def index_view(request):
+        return render(request,'index.html')
+   
 from testapp.models import Employee
 from testapp.serializers import EmployeeSerializer
 from rest_framework.generics import ListAPIView,RetrieveAPIView
@@ -19,6 +21,10 @@ class EmployeeRetrieveUpdateDestroy(mixins.UpdateModelMixin, mixins.DestroyModel
     def patch(self,request,*args,**kwargs):
         return self.partial_update(request, *args, **kwargs)
     def delete(self,request,*args,**kwargs):
-        return self.destroy(request,*args,**kwargs)
+        return self.destroy(request,*args,**kwargs) 
+
+      
+def index_view(request):
+        return render(request,'index.html')
 
 
